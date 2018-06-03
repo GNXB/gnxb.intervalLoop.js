@@ -47,11 +47,11 @@ const files = ['file1.txt', 'file2.txt'];
 
 var line;
 var i = 0;
-loop.deploy('level_file', next => {
+loop('level_file', next => {
   lines = fs.readFileSync(`./${files[i]}`, 'utf8').toString().split('\n');
 
   var j = 0;
-  loop.deploy('level_line', next => {
+  loop('level_line', next => {
     console.log(lines[j]);
     next('level_line', 1000, () => ++j < lines.length);
   });
@@ -79,10 +79,10 @@ do {
 to
 
 ```JavaScript
-loop.deploy('level1', next => {
+loop('level1', next => {
   // Statements...
 
-  loop.deploy('level2', next => {
+  loop('level2', next => {
     // Statements...
     next('level2', 1000, () => condition2);
   });
