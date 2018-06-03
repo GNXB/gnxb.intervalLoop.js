@@ -1,6 +1,6 @@
 const fs = require('fs');
-const TimeTriggerLoop = require('../gnxb.timeTriggerLoop');
-const loop = new TimeTriggerLoop();
+const IntervalLoop = require('../gnxb.intervalLoop');
+const loop = new IntervalLoop();
 
 const files = ['file1.txt', 'file2.txt'];
 
